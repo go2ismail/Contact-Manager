@@ -8,6 +8,11 @@ namespace cm.Models
 {
     public class Company : BaseAudit
     {
+        public Company()
+        {
+
+        }
+
         public Company(ApplicationUser applicationUser)
         {
             this.CreateAt = DateTime.UtcNow;

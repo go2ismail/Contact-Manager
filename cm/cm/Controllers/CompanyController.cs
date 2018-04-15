@@ -35,6 +35,7 @@ namespace cm.Controllers
             }
 
             var company = await _context.Company
+                .Include(x => x.Contacts)
                 .Include(c => c.CreateBy)
                 .SingleOrDefaultAsync(m => m.CompanyId == id);
             if (company == null)

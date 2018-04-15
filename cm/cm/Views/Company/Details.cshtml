@@ -2,6 +2,7 @@
 
 @{
     ViewData["Title"] = "Details";
+    Layout = "_LayoutDetails";
 }
 
 <h2>Details</h2>
@@ -129,4 +130,7 @@
 <div>
     <a asp-action="Edit" asp-route-id="@Model.CompanyId">Edit</a> |
     <a asp-action="Index">Back to List</a>
+</div>
+<div>
+    @await Html.PartialAsync("../CompanyContact/Index.cshtml", Model)
 </div>

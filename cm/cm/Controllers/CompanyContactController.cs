@@ -47,11 +47,13 @@ namespace cm.Controllers
         }
 
         // GET: CompanyContact/Create
-        public IActionResult Create()
+        public IActionResult Create(int CompanyId)
         {
-            ViewData["CompanyId"] = new SelectList(_context.Company, "CompanyId", "CompanyName");
+            ViewData["CompanyId"] = new SelectList(_context.Company, "CompanyId", "CompanyName", CompanyId);
             ViewData["CreateById"] = new SelectList(_context.Users, "Id", "Id");
-            return View();
+            Contact contact = new Contact();
+            contact.CompanyId = CompanyId;
+            return View(contact);
         }
 
         // POST: CompanyContact/Create
@@ -65,7 +67,8 @@ namespace cm.Controllers
             {
                 _context.Add(contact);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+
+                return RedirectToAction("Details", "Company", new { Id = contact.CompanyId });
             }
             ViewData["CompanyId"] = new SelectList(_context.Company, "CompanyId", "CompanyName", contact.CompanyId);
             ViewData["CreateById"] = new SelectList(_context.Users, "Id", "Id", contact.CreateById);

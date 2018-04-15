@@ -9,6 +9,11 @@ namespace cm.Models
 {
     public class Deal : BaseAudit
     {
+        public Deal()
+        {
+
+        }
+
         public Deal(ApplicationUser applicationUser)
         {
             this.CreateAt = DateTime.UtcNow;

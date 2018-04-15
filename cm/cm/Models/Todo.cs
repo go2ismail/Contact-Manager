@@ -8,6 +8,11 @@ namespace cm.Models
 {
     public class Todo : BaseAudit
     {
+        public Todo()
+        {
+
+        }
+
         public Todo(ApplicationUser applicationUser)
         {
             this.CreateAt = DateTime.UtcNow;
