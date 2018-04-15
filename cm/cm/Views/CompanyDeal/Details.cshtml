@@ -1,0 +1,78 @@
+﻿@model cm.Models.Deal
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Deal</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DealName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DealName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ExpectedClosingDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ExpectedClosingDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DealValue)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DealValue)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Tag)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Tag)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IsWon)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IsWon)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CreateAt)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CreateAt)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Company)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Company.CompanyName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CreateBy)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CreateBy.Id)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DealOwner)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DealOwner.Id)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.DealId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

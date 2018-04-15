@@ -1,0 +1,65 @@
+﻿@model IEnumerable<cm.Models.Todo>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.TodoName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TodoCompleteDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Tag)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CreateAt)
+                </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Company)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreateBy)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TodoName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TodoCompleteDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tag)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreateAt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Company.CompanyName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreateBy.Id)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.TodoId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.TodoId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.TodoId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

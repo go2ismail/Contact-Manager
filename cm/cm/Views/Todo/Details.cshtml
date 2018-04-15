@@ -1,0 +1,54 @@
+﻿@model cm.Models.Todo
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Todo</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TodoName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TodoName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TodoCompleteDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TodoCompleteDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Tag)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Tag)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CreateAt)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CreateAt)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Company)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Company.CompanyName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CreateBy)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CreateBy.Id)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.TodoId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

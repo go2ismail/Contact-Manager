@@ -1,0 +1,117 @@
+﻿@model cm.Models.Contact
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Contact</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ContactName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ContactName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Tag)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Tag)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MobilePhone)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MobilePhone)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.WorkPhone)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.WorkPhone)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.HomePhone)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.HomePhone)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MailingStreet)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MailingStreet)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MailingCity)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MailingCity)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MailingState)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MailingState)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MailingCountry)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MailingCountry)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MailingZipCode)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MailingZipCode)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CreateAt)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CreateAt)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Company)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Company.CompanyName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CreateBy)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CreateBy.Id)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="ContactId" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

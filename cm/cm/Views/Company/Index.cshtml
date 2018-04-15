@@ -1,0 +1,143 @@
+﻿@model IEnumerable<cm.Models.Company>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.CompanyName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Website)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Phone)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Fax)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Tag)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PhotoUrl)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.BillingAddressStreet)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.BillingAddressCity)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.BillingState)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.BillingCountry)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.BillingZipCode)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.IsCopyBillingAddressToShippingAddress)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ShippingAddressStreet)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ShippingAddressCity)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ShippingState)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ShippingCountry)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ShippingZipCode)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CreateAt)
+                </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreateBy)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CompanyName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Website)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fax)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tag)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PhotoUrl)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BillingAddressStreet)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BillingAddressCity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BillingState)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BillingCountry)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BillingZipCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsCopyBillingAddressToShippingAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShippingAddressStreet)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShippingAddressCity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShippingState)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShippingCountry)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShippingZipCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreateAt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreateBy.Id)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.CompanyId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.CompanyId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.CompanyId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

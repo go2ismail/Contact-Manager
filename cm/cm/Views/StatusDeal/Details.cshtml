@@ -1,0 +1,30 @@
+﻿@model cm.Models.StatusDeal
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>StatusDeal</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.StatusDealName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.StatusDealName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Weight)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Weight)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.StatusDealId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

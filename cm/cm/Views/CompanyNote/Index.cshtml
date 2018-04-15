@@ -1,0 +1,53 @@
+﻿@model IEnumerable<cm.Models.Note>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.NoteName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CreateAt)
+                </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Company)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreateBy)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NoteName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreateAt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Company.CompanyName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreateBy.Id)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.NoteId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.NoteId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.NoteId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

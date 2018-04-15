@@ -1,0 +1,125 @@
+﻿@model IEnumerable<cm.Models.Contact>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.ContactName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Title)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Description)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Tag)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Email)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MobilePhone)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.WorkPhone)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.HomePhone)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MailingStreet)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MailingCity)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MailingState)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MailingCountry)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MailingZipCode)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CreateAt)
+                </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Company)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreateBy)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ContactName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tag)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MobilePhone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WorkPhone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HomePhone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MailingStreet)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MailingCity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MailingState)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MailingCountry)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MailingZipCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreateAt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Company.CompanyName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreateBy.Id)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ContactId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ContactId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ContactId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
